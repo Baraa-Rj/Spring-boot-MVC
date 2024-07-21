@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Confirmation</title>
+</head>
+<body>
+<h1>Student Confirmation</h1>
+<label>The student is confirmed:
+    <span th:text="${student.firstName} + ' ' + ${student.lastName}"></span>
+</label>
+<br>
+<label>Country:
+    <span th:text="${student.country}"></span>
+</label>
+<br>
+<label>
+    favorite programming language:
+    <span th:text="${student.favoriteLanguage}"></span>
+</label>
+<br>
+<label>Operating Systems:
+    <ul>
+        <li th:each="tempOs: ${student.getOperatingSystems()}"
+            th:text="${tempOs}"></li>
+
+    </ul>
+</label>
+</body>
+</html>
